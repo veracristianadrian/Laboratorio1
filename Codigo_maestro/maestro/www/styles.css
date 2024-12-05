@@ -1,0 +1,63 @@
+/* {
+  box-sizing: border-box;
+}
+
+/*body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f4f4f4;
+}
+
+h1 {
+  margin: 20px 0;
+}
+
+/* El dashboard completo con los nueve menus */
+/*#data-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 440px);
+  grid-gap: 10px;
+  width: 95%;
+  max-width: 1500px;
+  margin: 0 auto 20px auto;
+  justify-content: center;
+}*/
+
+/* Cada menu asociado a un equipo */
+/*.terminal-box {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  width: 425px;
+  justify-self: center;
+}*/
+
+.terminal-box.disconnected {
+  border: 1px solid red;
+}
+
+.terminal-box.connected {
+  border: 1px solid green;
+}
+
+/* El título del menu de cada equipo */
+.terminal-title {
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* La información del menu de cada equipo */
+.terminal-data {
+  font-size: 14px;
+}
+
+details:not([open]) .terminal-data {
+  display: block;
+}
