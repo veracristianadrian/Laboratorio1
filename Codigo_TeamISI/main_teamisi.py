@@ -329,14 +329,6 @@ async def operations():
 
 
 
-#def get_app_data():
-    # Función que devuelve un `dict` con la data para el maestro.
- #   return {
-  #      "Relay": relay_pin,
-   #     "Brazo": ejeZ,
-    #    "Posicion_panel_eje_x": ejeX,
-    #    "Posicion_panel_eje_y": ejeY
-    #}
 
 
 async def main():
