@@ -1,0 +1,80 @@
+.terminal-box.disconnected {
+    border: 1px solid red;
+  }
+  
+  .terminal-box.connected {
+    border: 1px solid green;
+  }
+  
+  /* El título del menu de cada equipo */
+  .terminal-title {
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  /* La información del menu de cada equipo */
+  .terminal-data {
+    font-size: 14px;
+  }
+  
+  details:not([open]) .terminal-data {
+    display: block;
+  }
+  
+  .colapintos-table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 15px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .colapintos-th {
+    border: 1px solid #dddddd;
+    padding: 10px;
+    background-color: #4caf50;
+    color: white;
+    text-align: center;
+  }
+  
+  .colapintos-td {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 10px;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  .montecarlo-table {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    margin-top: 15px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .montecarlo-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+    background-color: #60e7b2;
+    color: black;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .montecarlo-element {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+    background-color: #ffffff;
+    padding: 10px;
+    color: black;
+    text-align: center;
+  }
+  
+  

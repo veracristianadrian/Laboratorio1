@@ -128,3 +128,4 @@ async def poll_terminal_data():
         except Exception as e:
             print(f"Error en el polling: {e}")
             pass
+

@@ -74,8 +74,7 @@ async def create_handler(get_app_data):
             if "GET" in request_str:
                 # Enviar la data del terminal
                 json_data = json.dumps(get_app_data())
-                response = f"HTTP/1.1 200 OK\r\nContent-Type: application/json\r\nContent-Length: {
-                    len(json_data)}\r\n\r\n{json_data}"
+                response = f"HTTP/1.1 200 OK\r\nContent-Type: application/json\r\nContent-Length: {len(json_data)}\r\n\r\n{json_data}"
                 writer.write(response.encode())
                 await writer.drain()
         except OSError as e:
@@ -90,7 +89,7 @@ async def create_handler(get_app_data):
 
 async def check_master_connection():
     """Reinicia el descubrimiento del maestro si sucede un timeout en el servidor HTTP."""
-    timeout_seconds = 5
+    timeout_seconds = 1
     while True:
         # Si `new_request_recieved` no fue seteado por el HTTP handler, desconectar al maestro
         if not master_disconnected.is_set() and not new_request_recieved.is_set():
@@ -100,13 +99,16 @@ async def check_master_connection():
         await asyncio.sleep(timeout_seconds)
 
 # Datos para conectarse a la red WiFi.
-WLAN_SSID = "agus"
-WLAN_PASSWORD = "agustinb"
-
+WLAN_SSID = "Fibertel WiFi925 2.4GHz"
+WLAN_PASSWORD = "00439317996"
+#WLAN_SSID = "wfrre"
+#WLAN_PASSWORD = "BityAtomo"
+#WLAN_SSID = "crisS20FE"
+#WLAN_PASSWORD = "hola1346"
 # Datos para la interacción entre los terminales y el maestro.
 BROADCAST_PORT = 10000
 HTTP_SERVER_PORT = 10001
-TEAM_NAME = "Rompecircuitos"
+TEAM_NAME = "TeamISI"
 
 # Indica si el maestro está conectado. Si no lo está, se vuelve al descubrimiento
 master_disconnected = asyncio.Event()
@@ -120,7 +122,7 @@ async def monitoring(get_app_data):
     """Monitoreo asincrónico con el controlador maestro.
     `get_app_data` es una función llamada en cada poll. Debe retornar el `dict` a enviar al maestro."""
     print(f"Controlador {TEAM_NAME}")
-
+    
     if_config = await connect_to_wifi(WLAN_SSID, WLAN_PASSWORD)
     if if_config is None:
         print("Error al conectar a la red Wifi.")
@@ -136,3 +138,4 @@ async def monitoring(get_app_data):
         start_http_server(HTTP_SERVER_PORT, get_app_data),
         check_master_connection()
     )
+

@@ -62,3 +62,4 @@ async def discover_terminals(broadcast_ip: str, broadcast_port: int):
         except OSError:
             # Ceder el control si no hay mensajes
             await asyncio.sleep(time_interval_seconds)
+

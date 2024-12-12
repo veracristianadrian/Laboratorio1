@@ -56,14 +56,13 @@ def route_request(request):
 
     if path == "/":
         print(f"Recibida petición GET '/' del dashboard web")
-        return serve_file("www/index.html", "text/html")
+        return serve_file("/index.html", "text/html")
     elif path.endswith(".html"):
-        return serve_file(f"www{path}", "text/html")
+        return serve_file(f"{path}", "text/html")
     elif path.endswith(".css"):
-        return serve_file(f"www{path}", "text/css")
+        return serve_file(f"{path}", "text/css")
     elif path.endswith(".js"):
-        return serve_file(
-            f"www{path}", "application/javascript")
+        return serve_file(f"{path}", "application/javascript")
     elif path == "/data":
         return serve_data()
     else:
@@ -106,3 +105,4 @@ def serve_data():
         f"{json_data}"
 
     return response.encode()
+

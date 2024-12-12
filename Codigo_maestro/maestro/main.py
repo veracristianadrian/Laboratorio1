@@ -6,12 +6,14 @@ import uasyncio as asyncio
 
 
 # Datos para conectarse a la red WiFi
-WLAN_SSID = "agus"
-WLAN_PASSWORD = "agustinb"
+#WLAN_SSID = "wfrre"
+#WLAN_PASSWORD = "BityAtomo"
+WLAN_SSID = "Fibertel WiFi925 2.4GHz"
+WLAN_PASSWORD = "00439317996"
 
 # Datos para las interfaces del maestro
 BROADCAST_PORT = 10000
-HTTP_SERVER_PORT = 80
+HTTP_SERVER_PORT = 8080
 
 
 async def master_monitoring():
